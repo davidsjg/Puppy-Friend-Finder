@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import CardDisplay from "../components/CardDisplay/CardDisplay.js";
 
 function About() {
-    return (
-        <div>
-            <h1>Hello from ABOUT!</h1>
-        </div>
-    )
+  return (
+    <>
+      <CardDisplay />
+    </>
+  );
 }
 
-export default About
+export default About;

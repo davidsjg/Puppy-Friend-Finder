@@ -5,7 +5,6 @@ import About from "./pages/about";
 import Discover from "./pages/discover";
 import Search from "./pages/search";
 import NavBar from "./components/NavBar/NavBar";
-import CardDisplay from "./components/CardDisplay/CardDisplay";
 import CardFooter from "./components/CardFooter/CardFooter";
 
 function App() {

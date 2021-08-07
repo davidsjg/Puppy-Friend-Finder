@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
+import styles from "./NavBar.module.css";
 
 function NavBar() {
   return (
@@ -7,18 +8,27 @@ function NavBar() {
       <Nav
         activeKey="/"
         onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+        className={styles["NavBarTop"]}
       >
         <Nav.Item>
-          <Nav.Link href="/">Puppy Friend Finder</Nav.Link>
+          <Nav.Link className={styles["NavItem1"]} href="/">
+            Puppy Friend Finder
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link className={styles["NavItem1"]} href="/about">
+            About
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/discover">Discover</Nav.Link>
+          <Nav.Link className={styles["NavItem1"]} href="/discover">
+            Discover
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/search">Search</Nav.Link>
+          <Nav.Link className={styles["NavItem1"]} href="/search">
+            Search
+          </Nav.Link>
         </Nav.Item>
       </Nav>
     </div>

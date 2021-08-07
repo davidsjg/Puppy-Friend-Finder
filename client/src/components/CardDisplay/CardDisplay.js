@@ -10,9 +10,15 @@ function CardDisplay() {
       <Card className={styles["CardDisplay"]}>
         {/* <Card.Img variant="top" src={dogBackground} /> */}
         <Card.Body>
-          <Card.Title>Welcome to Puppy Friend Finder!</Card.Title>
-          <Card.Text>Who's a good boy?</Card.Text>
-          <Button variant="primary">Find A Pup!</Button>
+          <Card.Title className={styles["CardText"]}>
+            <h1>Welcome to Puppy Friend Finder!</h1>
+          </Card.Title>
+          <Card.Text className={styles["CardText"]}>
+            <h4>Who's a good boy?</h4>
+          </Card.Text>
+          <Button variant="primary" className={styles["CardText"]}>
+            Find A Pup!
+          </Button>
         </Card.Body>
       </Card>
     </div>

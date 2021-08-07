@@ -1,0 +1,14 @@
+.NavBarTop {
+  background-color: indianred;
+  color: white !important;
+  border-color: black;
+  border-width: 5px;
+}
+
+.NavItem1 {
+  color: white !important;
+}
+
+.wholeBar {
+  align-items: center;
+}

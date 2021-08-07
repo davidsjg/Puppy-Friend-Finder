@@ -1,5 +1,5 @@
 import React from "react";
-import CardShuffle from "../components/CardShuffle/CardShuffle";
+import CardShuffle from "../components/CardDiscover/CardShuffle";
 
 function Discover() {
   return (

@@ -1,0 +1,30 @@
+.CardShuffle {
+  background-color: cadetblue;
+
+  margin: 0 auto; /* Added */
+  margin-top: 10px;
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.ButtonText {
+  margin: 10px;
+}
+
+.myCont {
+  resize: both;
+
+  height: 500px;
+  width: 500px;
+  padding: 15px;
+}

@@ -5,7 +5,7 @@ import styles from "./Card.module.css";
 
 function CardDisplay() {
   return (
-    <div>
+    <>
       {/* <Card style={{ width: "18rem" }}> */}
       <Card className={styles["CardDisplay"]}>
         {/* <Card.Img variant="top" src={dogBackground} /> */}
@@ -21,7 +21,7 @@ function CardDisplay() {
           </Button>
         </Card.Body>
       </Card>
-    </div>
+    </>
   );
 }
 

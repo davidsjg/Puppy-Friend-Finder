@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import CardShuffle from "../components/CardShuffle/CardShuffle";
 
 function Discover() {
-    return (
-        <div>
-            <h1>Hello from DISCOVER!</h1>
-        </div>
-    )
+  return (
+    <div>
+      <CardShuffle />
+    </div>
+  );
 }
 
-export default Discover
+export default Discover;

@@ -5,11 +5,7 @@ import styles from "./NavBar.module.css";
 function NavBar() {
   return (
     <div>
-      <Nav
-        activeKey="/"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-        className={styles["NavBarTop"]}
-      >
+      <Nav activeKey="/" className={styles["NavBarTop"]}>
         <Nav.Item>
           <Nav.Link className={styles["NavItem1"]} href="/">
             Puppy Friend Finder

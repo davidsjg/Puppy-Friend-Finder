@@ -1,11 +1,13 @@
 import React from "react";
 import CardShuffle from "../components/CardDiscover/CardShuffle";
 
-function Discover() {
+function Discover(props) {
+  console.log("hello from discover");
+  console.log(props);
   return (
-    <div>
-      <CardShuffle />
-    </div>
+    <>
+      <CardShuffle props={props} />
+    </>
   );
 }
 

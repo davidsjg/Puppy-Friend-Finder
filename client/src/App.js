@@ -11,6 +11,7 @@ import API from "./utils/API";
 class App extends Component {
   state = {
     result: {},
+    likes: 0,
   };
 
   componentDidMount() {
@@ -22,10 +23,60 @@ class App extends Component {
     API.search(query)
       .then((res) => {
         console.log(res);
-        this.setState({ results: res.data });
+        this.setState({ result: res.data });
       })
 
       .catch((err) => console.log(err));
+  };
+
+  searchDogs2 = (query) => {
+    API.search(query)
+      .then((res) => {
+        console.log(res);
+        console.log(this.state.likes);
+
+        this.setState({
+          likes: this.state.likes + 1,
+          result: res.data,
+        });
+      })
+
+      .catch((err) => console.log(err));
+  };
+
+  handleIncrement = () => {
+    // this.setState({ result: this.state.likes + 1 });
+    const rndInt = Math.floor(Math.random() * 5) + 1;
+    console.log(rndInt);
+
+    let randomArr = [
+      "error",
+      "like",
+      "dislike",
+      "dislike",
+      "dislike",
+      "dislike",
+    ];
+
+    let randomLike = randomArr[rndInt];
+
+    let like = "like";
+    let query = "/breeds/image/random";
+
+    if (like === randomLike) {
+      // this.state.likes = this.state.likes + 1;
+      // console.log("currLikes = " + currLikes);
+
+      this.searchDogs2(query);
+
+      // console.log(tempDog2);
+      // this.setState({
+      //   likes: this.state.likes + 1,
+      //   result: this.searchDogs2(query),
+      // });
+    } else {
+      this.searchDogs(query);
+    }
   };
 
   render() {
@@ -43,7 +94,11 @@ class App extends Component {
             <About />
           </Route>
           <Route exact path={"/discover"}>
-            <Discover />
+            <Discover
+              searchDogs={this.searchDogs}
+              finalImage={this.state.result}
+              handleIncrement={this.handleIncrement}
+            />
           </Route>
           <Route exact path={"/search"}>
             <Search />

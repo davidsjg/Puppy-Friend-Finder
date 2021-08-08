@@ -16,7 +16,11 @@ function CardDisplay() {
           <Card.Text className={styles["CardText"]}>
             <h4>Who's a good boy?</h4>
           </Card.Text>
-          <Button variant="primary" className={styles["CardText"]}>
+          <Button
+            variant="primary"
+            href="/discover"
+            className={styles["CardText"]}
+          >
             Find A Pup!
           </Button>
         </Card.Body>

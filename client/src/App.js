@@ -12,6 +12,7 @@ class App extends Component {
   state = {
     result: {},
     likes: 0,
+    dogArr: [],
   };
 
   componentDidMount() {
@@ -33,11 +34,14 @@ class App extends Component {
     API.search(query)
       .then((res) => {
         console.log(res);
+        console.log(this.state.dogArr);
         console.log(this.state.likes);
+        var joined = this.state.dogArr.concat(res.data.message);
 
         this.setState({
           likes: this.state.likes + 1,
           result: res.data,
+          dogArr: joined,
         });
       })
 
@@ -66,6 +70,7 @@ class App extends Component {
     if (like === randomLike) {
       // this.state.likes = this.state.likes + 1;
       // console.log("currLikes = " + currLikes);
+      console.log(this.state.result.message);
 
       this.searchDogs2(query);
 

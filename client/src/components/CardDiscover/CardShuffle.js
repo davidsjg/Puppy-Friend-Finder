@@ -5,12 +5,6 @@ import { Card, Button, Container } from "react-bootstrap";
 function CardShuffle(props) {
   const dogPic2 = props.props.finalImage.message;
 
-  const rndInt = Math.floor(Math.random() * 5) + 1;
-
-  let randomArr = ["error", "like", "like", "like", "like", "dislike"];
-
-  let randomLike = randomArr[rndInt];
-
   // handleIncrement() {
   //   let query = "/breeds/image/random";
   //   let tempQuery = props.props.searchDogs(query)

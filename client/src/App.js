@@ -7,6 +7,7 @@ import Search from "./pages/search";
 import NavBar from "./components/NavBar/NavBar";
 import CardFooter from "./components/CardFooter/CardFooter";
 import API from "./utils/API";
+import Matches from "./pages/matches";
 
 class App extends Component {
   state = {
@@ -23,7 +24,6 @@ class App extends Component {
   searchDogs = (query) => {
     API.search(query)
       .then((res) => {
-        console.log(res);
         this.setState({ result: res.data });
       })
 
@@ -33,9 +33,6 @@ class App extends Component {
   searchDogs2 = (query) => {
     API.search(query)
       .then((res) => {
-        console.log(res);
-        console.log(this.state.dogArr);
-        console.log(this.state.likes);
         var joined = this.state.dogArr.concat(res.data.message);
 
         this.setState({
@@ -51,16 +48,8 @@ class App extends Component {
   handleIncrement = () => {
     // this.setState({ result: this.state.likes + 1 });
     const rndInt = Math.floor(Math.random() * 5) + 1;
-    console.log(rndInt);
 
-    let randomArr = [
-      "error",
-      "like",
-      "dislike",
-      "dislike",
-      "dislike",
-      "dislike",
-    ];
+    let randomArr = ["error", "like", "like", "like", "like", "dislike"];
 
     let randomLike = randomArr[rndInt];
 
@@ -70,8 +59,9 @@ class App extends Component {
     if (like === randomLike) {
       // this.state.likes = this.state.likes + 1;
       // console.log("currLikes = " + currLikes);
-      console.log(this.state.result.message);
-
+      let tempLikes = parseInt(this.state.likes) + 1;
+      console.log(typeof tempLikes);
+      console.log("Current likes = " + tempLikes);
       this.searchDogs2(query);
 
       // console.log(tempDog2);
@@ -104,10 +94,14 @@ class App extends Component {
               finalImage={this.state.result}
               handleIncrement={this.handleIncrement}
               numDogLikes={this.state.likes}
+              doggieArr={this.state.dogArr}
             />
           </Route>
           <Route exact path={"/search"}>
             <Search />
+          </Route>
+          <Route exact path={"/matches"}>
+            <Matches numDogLike={this.state.dogArr} />
           </Route>
         </Switch>
         <CardFooter />

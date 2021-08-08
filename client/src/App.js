@@ -103,6 +103,7 @@ class App extends Component {
               searchDogs={this.searchDogs}
               finalImage={this.state.result}
               handleIncrement={this.handleIncrement}
+              numDogLikes={this.state.likes}
             />
           </Route>
           <Route exact path={"/search"}>

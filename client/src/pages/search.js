@@ -1,25 +1,28 @@
 import React from "react";
 import styles from "./Searches.module.css";
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, Button } from "react-bootstrap";
 
 function Search(props) {
-  console.log(props);
+  {
+    console.log(props);
 
-  return (
-    <>
-      <div className={styles["shuffle"]}>
-        <Container className={styles["myCont"]}>
-          <Card className={styles["CardShuffle"]}>
-            <Card.Img
-              className={styles["dogImage"]}
-              variant="top"
-              //   src={props.props.finalImage.message}
-            />
-          </Card>
-        </Container>
-      </div>
-    </>
-  );
+    if (props.results[0]) {
+      return (
+        <Card.Img
+          //   className={styles["dogImage"]}
+          variant="top"
+          src={props.results.message[0]}
+        />
+      );
+    }
+    return (
+      <Card.Img
+        // className={styles["dogImage"]}
+        variant="top"
+        src={props.results.message}
+      />
+    );
+  }
 }
 
 export default Search;

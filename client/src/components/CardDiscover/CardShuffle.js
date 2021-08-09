@@ -8,25 +8,23 @@ function CardShuffle(props) {
 
   return (
     <>
-      <div className={styles["shuffle"]}>
-        <Container className={styles["myCont"]}>
-          <Card className={styles["CardShuffle"]}>
-            <DispPup props={props} />
-            <Card.Body className={styles["center"]}>
-              <Button variant="primary" className={styles["ButtonText"]}>
-                Next Pup!
-              </Button>
-              <Button
-                variant="primary"
-                className={styles["ButtonText"]}
-                onClick={props.props.handleIncrement}
-              >
-                Like this Pup!
-              </Button>
-            </Card.Body>
-          </Card>
-        </Container>
-      </div>
+      <Container className={styles["myCont"]}>
+        <Card className={styles["CardShuffle"]}>
+          <DispPup className={styles["CardShuffle"]} props={props} />
+          <Card.Body className={styles["center"]}>
+            <Button variant="primary" className={styles["ButtonText"]}>
+              Next Pup!
+            </Button>
+            <Button
+              variant="primary"
+              className={styles["ButtonText"]}
+              onClick={props.props.handleIncrement}
+            >
+              Like this Pup!
+            </Button>
+          </Card.Body>
+        </Card>
+      </Container>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import styles from "./dispPup.module.css";
 
 function DispPup(props) {
   {
@@ -8,7 +9,9 @@ function DispPup(props) {
       return (
         <Card.Img
           //   className={styles["dogImage"]}
+          className="dogContainer"
           variant="top"
+          className={styles["dogContainer"]}
           src={props.props.props.finalImage.message[0]}
         />
       );
@@ -17,6 +20,7 @@ function DispPup(props) {
       <Card.Img
         // className={styles["dogImage"]}
         variant="top"
+        className={styles["dogContainer"]}
         src={props.props.props.finalImage.message}
       />
     );

@@ -5,12 +5,6 @@ import { Card, Button, Container } from "react-bootstrap";
 function CardShuffle(props) {
   const dogPic2 = props.props.finalImage.message;
 
-  // handleIncrement() {
-  //   let query = "/breeds/image/random";
-  //   let tempQuery = props.props.searchDogs(query)
-  //   this.setState({ result: this.state.count + 1})
-  // }
-
   return (
     <>
       <div className={styles["shuffle"]}>

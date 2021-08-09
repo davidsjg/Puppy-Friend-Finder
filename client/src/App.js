@@ -45,7 +45,19 @@ class App extends Component {
       .catch((err) => console.log(err));
   };
 
-  handleIncrement = () => {
+  searchDogs3 = () => {
+    let query1 = "/breed/hound/images";
+    API.search(query1)
+      .then((res) => {
+        this.setState({
+          result: res.data,
+        });
+      })
+
+      .catch((err) => console.log(err));
+  };
+
+  handleIncrement = (value) => {
     // this.setState({ result: this.state.likes + 1 });
     const rndInt = Math.floor(Math.random() * 5) + 1;
 
@@ -70,7 +82,7 @@ class App extends Component {
       //   result: this.searchDogs2(query),
       // });
     } else {
-      this.searchDogs(query);
+      this.searchDogs(value);
     }
   };
 
@@ -98,7 +110,10 @@ class App extends Component {
             />
           </Route>
           <Route exact path={"/search"}>
-            <Search />
+            <Search
+              results={this.state.result}
+              searchDogs3={this.searchDogs3}
+            />
           </Route>
           <Route exact path={"/matches"}>
             <Matches numDogLike={this.state.dogArr} />

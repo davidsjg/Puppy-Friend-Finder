@@ -14,6 +14,8 @@ function CardLlikes(props) {
     currDogArr.push(dog);
   });
 
+  console.log(props.props.finalImage.message);
+
   console.log(currDogArr);
 
   localStorage.setItem("dogArr", JSON.stringify(currDogArr));

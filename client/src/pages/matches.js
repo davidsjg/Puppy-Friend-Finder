@@ -1,15 +1,12 @@
 import React from "react";
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import BR from "../components/BR";
+import styles from "./Matches.module.css";
 
 function Matches(props) {
   let dogTempArr = [];
   dogTempArr = JSON.parse(localStorage.getItem("dogArr"));
   console.log(dogTempArr);
-
-  // dogTempArr2 = localStorage.getItem("dogArr").map(function (i) {
-  //   return i + 1;
-  // });
 
   return (
     <>

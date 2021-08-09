@@ -1,20 +1,17 @@
 import React from "react";
 import styles from "./CardShuffle.module.css";
 import { Card, Button, Container } from "react-bootstrap";
+import DispPup from "../dispPup";
 
 function CardShuffle(props) {
-  const dogPic2 = props.props.finalImage.message;
+  console.log(props);
 
   return (
     <>
       <div className={styles["shuffle"]}>
         <Container className={styles["myCont"]}>
           <Card className={styles["CardShuffle"]}>
-            <Card.Img
-              className={styles["dogImage"]}
-              variant="top"
-              src={dogPic2}
-            />
+            <DispPup props={props} />
             <Card.Body className={styles["center"]}>
               <Button variant="primary" className={styles["ButtonText"]}>
                 Next Pup!

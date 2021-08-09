@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import BR from "../components/BR";
-import styles from "./Matches.module.css";
+// import styles from "./Matches.module.css";
 
 function Matches(props) {
   let dogTempArr = [];

@@ -3,20 +3,13 @@ import { Card, Button } from "react-bootstrap";
 import styles from "./Card.module.css";
 
 function CardLlikes(props) {
-  console.log("hello from CardLikes");
-  console.log(props);
-
   let currDogArr = [];
 
   // let tempDogArr = new Array[props.doggieArr.length]();
 
   props.props.doggieArr.map((dog) => {
-    currDogArr.push(dog);
+    return currDogArr.push(dog);
   });
-
-  console.log(props.props.finalImage.message);
-
-  console.log(currDogArr);
 
   localStorage.setItem("dogArr", JSON.stringify(currDogArr));
   return (

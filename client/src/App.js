@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import About from "./pages/about";
 import Discover from "./pages/discover";
 import Search from "./pages/search";
 import NavBar from "./components/NavBar/NavBar";
 import CardFooter from "./components/CardFooter/CardFooter";
 import API from "./utils/API";
 import Matches from "./pages/matches";
+import AboutMe from "./pages/aboutMe";
 
 class App extends Component {
   state = {
@@ -18,6 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     let query = "/breeds/image/random";
+
     this.searchDogs(query);
   }
 
@@ -66,7 +67,7 @@ class App extends Component {
     let randomLike = randomArr[rndInt];
 
     let like = "like";
-    let query = "/breeds/image/random";
+    let query = "/breed/hound/images";
 
     if (like === randomLike) {
       // this.state.likes = this.state.likes + 1;
@@ -82,23 +83,32 @@ class App extends Component {
       //   result: this.searchDogs2(query),
       // });
     } else {
-      this.searchDogs(value);
+      this.searchDogs3(query);
     }
   };
 
   render() {
     return (
       <Router>
-        <NavBar />
+        <NavBar searchDogs3={this.searchDogs3} finalImage={this.state.result} />
         <Switch>
           <Route exact path={"/"}>
-            <About />
+            <AboutMe
+              result={this.state.result}
+              searchDogs3={this.searchDogs3}
+            />
           </Route>
           <Route exact path={"/home"}>
-            <About />
+            <AboutMe
+              result={this.state.result}
+              searchDogs3={this.searchDogs3}
+            />
           </Route>
           <Route exact path={"/about"}>
-            <About />
+            <AboutMe
+              result={this.state.result}
+              searchDogs3={this.searchDogs3}
+            />
           </Route>
           <Route exact path={"/discover"}>
             <Discover

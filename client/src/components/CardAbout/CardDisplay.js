@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 
 import styles from "./Card.module.css";
 
-function CardDisplay() {
+function CardDisplay(props) {
   return (
     <>
       {/* <Card style={{ width: "18rem" }}> */}
@@ -14,11 +14,12 @@ function CardDisplay() {
             <h1>Welcome to Puppy Friend Finder!</h1>
           </Card.Title>
           <Card.Text className={styles["CardText"]}>
-            <h4>Who's a good boy?</h4>
+            Who's a good boy?
           </Card.Text>
           <Button
             variant="primary"
             href="/discover"
+            onClick={props.searchDogs3}
             className={styles["CardText"]}
           >
             Find A Pup!

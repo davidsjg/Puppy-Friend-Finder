@@ -1,12 +1,13 @@
 import React from "react";
 import CardDisplay from "../components/CardAbout/CardDisplay.js";
 
-function About() {
+function AboutMe(props) {
+  console.log(props);
   return (
     <>
-      <CardDisplay />
+      <CardDisplay props={props} />
     </>
   );
 }
 
-export default About;
+export default AboutMe;

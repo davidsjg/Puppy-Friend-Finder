@@ -8,6 +8,7 @@ import CardFooter from "./components/CardFooter/CardFooter";
 import API from "./utils/API";
 import Matches from "./pages/matches";
 import AboutMe from "./pages/aboutMe";
+import Search2 from "./pages/search2";
 
 class App extends Component {
   state = {
@@ -120,10 +121,7 @@ class App extends Component {
             />
           </Route>
           <Route exact path={"/search"}>
-            <Search
-              results={this.state.result}
-              searchDogs3={this.searchDogs3}
-            />
+            <Search2 />
           </Route>
           <Route exact path={"/matches"}>
             <Matches numDogLike={this.state.dogArr} />

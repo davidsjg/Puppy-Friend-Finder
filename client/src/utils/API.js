@@ -7,4 +7,7 @@ export default {
     console.log("in API utils query = " + temp);
     return axios.get(BASEURL + query);
   },
+  getDogArr: function (breed) {
+    return axios.get(BASEURL + "/breed/" + breed + "/images");
+  },
 };

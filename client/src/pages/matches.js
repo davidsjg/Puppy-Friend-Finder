@@ -31,7 +31,7 @@ function Matches(props) {
         <BR />
         <BR />
 
-        <Button href="/discover">Return Home</Button>
+        <Button href="/">Return Home</Button>
       </Container>
     </>
   );

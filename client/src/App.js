@@ -67,7 +67,7 @@ class App extends Component {
     let randomLike = randomArr[rndInt];
 
     let like = "like";
-    let query = "/breed/hound/images";
+    let query = "/breeds/image/random";
 
     if (like === randomLike) {
       // this.state.likes = this.state.likes + 1;

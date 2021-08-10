@@ -5,14 +5,14 @@ import styles from "./dispPup.module.css";
 function DispPup(props) {
   {
     console.log(props);
-    if (props.props.props.finalImage[0]) {
+    if (props.props.props.finalImage.message) {
       return (
         <Card.Img
           //   className={styles["dogImage"]}
           className="dogContainer"
           variant="top"
           className={styles["dogContainer"]}
-          src={props.props.props.finalImage.message[0]}
+          src={props.props.props.finalImage.message}
         />
       );
     }

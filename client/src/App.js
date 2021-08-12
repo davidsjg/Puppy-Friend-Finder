@@ -74,8 +74,7 @@ class App extends Component {
       // this.state.likes = this.state.likes + 1;
       // console.log("currLikes = " + currLikes);
       let tempLikes = parseInt(this.state.likes) + 1;
-      console.log(typeof tempLikes);
-      console.log("Current likes = " + tempLikes);
+
       this.searchDogs2(query);
 
       // console.log(tempDog2);

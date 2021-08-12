@@ -4,8 +4,6 @@ import { Card, Button, Container } from "react-bootstrap";
 import DispPup from "../dispPup";
 
 function CardShuffle(props) {
-  console.log(props);
-
   return (
     <>
       <Container className={styles["myCont"]}>

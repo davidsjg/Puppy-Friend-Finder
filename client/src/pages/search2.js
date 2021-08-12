@@ -2,69 +2,51 @@ import React, { Component } from "react";
 import styles from "./Search2.module.css";
 import API from "../utils/API";
 import { Dropdown } from "react-bootstrap";
+import SearchForm from "../components/SearchForm/SearchForm";
 
 export default class Search2 extends Component {
   state = {
-    result: {},
-    tempArr: ["horse", "blue", "hospital"],
+    search: "",
+    breeds: [],
+    results: [],
+    error: "",
   };
 
-  searchDogs(dog) {
-    API.getDogArr(dog).then((res) => {
-      this.setState({ result: res.data });
-    });
+  componentDidMount() {
+    API.getBaseBreedList().then((res) =>
+      this.setState({ breeds: res.data.message })
+    );
   }
 
-  componentDidMount() {
-    this.searchDogs("hound");
-  }
+  handleInputChange = (event) => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    API.getDogsOfBreedList(this.state.search).then((res) => {
+      if (res.data.status === "error") {
+        throw new Error(res.data.message);
+      }
+      this.setState({ results: res.data.message, error: "" });
+    });
+  };
 
   render() {
     {
-      console.log(this.state);
+      console.log(this.state.result);
     }
-    {
-      if ((this.state.result = "")) {
-        return (
-          <div className={styles["myCont"]}>
-            <h3>Search for A Dog</h3>
-            <div>
-              <div className={styles["hello"]}>Breed Name:</div>
-            </div>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Dropdown Button
-              </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                {this.state.result.map((dog) => {
-                  return <Dropdown.Item>{dog}</Dropdown.Item>;
-                })}
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        );
-      } else {
-        return (
-          <div className={styles["myCont"]}>
-            <h3>Search for A Dog</h3>
-            <div>
-              <div className={styles["hello"]}>Breed Name:</div>
-            </div>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Dropdown Button
-              </Dropdown.Toggle>
+    return (
+      <div className={styles["myCont"]}>
+        <h3>Search for A Dog</h3>
 
-              <Dropdown.Menu>
-                {this.state.tempArr.map((dog) => {
-                  return <Dropdown.Item>{dog}</Dropdown.Item>;
-                })}
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        );
-      }
-    }
+        <SearchForm
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+          breeds={this.state.breeds}
+        />
+      </div>
+    );
   }
 }
